@@ -7,16 +7,16 @@ def nyc_pigeon_organizer(data)
     
     color_value.collect do |name_key, name_value|
 
-      name_value.collect do |element|
+      name_value.collect do |name|
         
-        if !new_hash[element]
+        if !new_hash[name]
           new_hash[element] = {}
         end
 
         if !new_hash[element][color_key]
           new_hash[element][color_key] = []
-          
         end
+        
         new_hash[element][color_key] << name_key.to_s
 
     # "Theo" => {:color => []}
@@ -24,9 +24,10 @@ def nyc_pigeon_organizer(data)
     # binding.pry
     
       end
-
+  
     end
-    
+  
   end
+  
   new_hash
 end
