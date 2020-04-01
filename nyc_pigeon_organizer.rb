@@ -3,9 +3,9 @@ def nyc_pigeon_organizer(data)
 
   new_hash = {}
  
-  data.collect do |key, value|
+  data.collect do |key, hash_value|
     
-    value.collect do |color_key, name_array|
+    hash_value.collect do |inner_key, name_array|
 
       name_array.collect do |pigeon_name|
         
@@ -17,7 +17,7 @@ def nyc_pigeon_organizer(data)
           new_hash[pigeon_name][key] = []
         end
         
-        new_hash[pigeon_name][key] << color_key.to_s
+        new_hash[pigeon_name][key] << inner_key.to_s
 
     # "Theo" => {:color => []}
     # << name_key.to_s
