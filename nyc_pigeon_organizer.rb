@@ -7,7 +7,7 @@ def nyc_pigeon_organizer(data)
     
     color_value.collect do |name_key, name_value|
 
-      name_value.collect do |name|
+      name_value.collect do |pigeon_name|
         
         if !new_hash[name]
           new_hash[element] = {}
