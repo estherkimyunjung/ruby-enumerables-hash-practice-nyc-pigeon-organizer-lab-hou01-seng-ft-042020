@@ -5,19 +5,19 @@ def nyc_pigeon_organizer(data)
  
   data.collect do |key, value|
     
-    value.collect do |color_key, name_value|
+    value.collect do |color_key, name_array|
 
-      name_value.collect do |pigeon_name|
+      name_array.collect do |pigeon_name|
         
         if !new_hash[pigeon_name]
           new_hash[pigeon_name] = {}
         end
 
-        if !new_hash[pigeon_name][color_key]
-          new_hash[pigeon_name][color_key] = []
+        if !new_hash[pigeon_name][key]
+          new_hash[pigeon_name][key] = []
         end
         
-        new_hash[pigeon_name][color_key] << name_key.to_s
+        new_hash[pigeon_name][key] << color_key.to_s
 
     # "Theo" => {:color => []}
     # << name_key.to_s
